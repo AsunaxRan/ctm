@@ -1,0 +1,36 @@
+.btn {
+  $btn: ".btn";
+  $blue: #4f79ff;
+  $white: #fff;
+  $gray-dark: #999cbf;
+
+  padding: 15px 25px;
+  border: 2px solid;
+  color: $white;
+  font-weight: 700;
+  border-radius: 30px;
+
+  &--primary {
+    background-color: $blue;
+    border-color: $blue;
+  }
+
+  &--secondary {
+    background-color: $gray-dark;
+    border-color: $gray-dark;
+    color: $white;
+  }
+
+  &--outline {
+    background-color: transparent;
+  }
+
+  &--outline#{$btn}--secondary {
+    border-color: $gray-dark;
+    color: $gray-dark;
+  }
+
+  &--small {
+    padding: 10px;
+  }
+}

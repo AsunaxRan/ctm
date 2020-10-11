@@ -1,0 +1,21 @@
+.search {
+  color: $gray;
+
+  display: inline-block;
+  padding: 4px 6px;
+  max-width: 360px;
+
+  &__icon i {
+    font-weight: 700;
+  }
+
+  &__input {
+    border: none;
+    outline: 0;
+    padding: 0 5px;
+
+    &::placeholder {
+      font-weight: 700;
+    }
+  }
+}

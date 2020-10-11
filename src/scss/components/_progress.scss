@@ -1,0 +1,16 @@
+.progress {
+  $blue: #4d79ff;
+
+  display: flex;
+  height: 1rem;
+  background-color: rgba($blue, .1);
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__bar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $blue;
+  }
+}

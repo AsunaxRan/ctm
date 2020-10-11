@@ -1,0 +1,32 @@
+$white: #fff;
+$purple: #bf68f7;
+$orange: #fac168;
+$red: #ff6176;
+$blue: #5b56e8;
+$gray: #777c99;
+
+$primary: $blue;
+$secondary: $gray;
+$info: $purple;
+$warning: $orange;
+$danger: $red;
+$light: #9d9fb6;
+$dark: #152040;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+$zindex-modal: 1050;
+
+$primary-font: 'Roboto Condensed', sans-serif;

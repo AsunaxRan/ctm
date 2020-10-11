@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: $zindex-modal;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+
+  @include square(100%);
+
+  &.show {
+    display: block;
+  }
+
+  &__dialog {
+    position: relative;
+    width: auto;
+    max-width: 500px;
+    pointer-events: none;
+    margin: 1.75rem auto;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: $white;
+    border-radius: 4px;
+  }
+
+  &__body {
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,39 @@
+.radio {
+  $blue: #4f79ff;
+  $gray: #f0f0f8;
+  $white: #fff;
+
+  display: flex;
+  max-width: 178px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid $blue;
+
+  &__item {
+    display: flex;
+    flex: 1 1 50%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__input:checked + &__label {
+    background-color: $blue;
+    color: $white;
+  }
+
+  &__label {
+    background-color: $gray;
+    color: $blue;
+    font-weight: 700;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+  }
+}

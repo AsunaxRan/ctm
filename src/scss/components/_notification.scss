@@ -1,0 +1,38 @@
+.notification {
+  $blue: #4c7ef7;
+  $light-blue: #e9ebff;
+  $red: #fd5681;
+  $white: #fff;
+  $black-333: #333;
+
+  position: relative;
+  display: inline-block;
+
+  &__shape {
+    background-color: $light-blue;
+    color: $blue;
+    border-radius: 50%;
+    font-size: 24px;
+
+    @include square(50px);
+    @include flex-item-center();
+  }
+
+  &__badge {
+    color: $white;
+    background-color: $red;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: small;
+    box-shadow: -1px 1px 3px rgba($black-333, .5);
+
+    @include square(22px);
+    @include flex-item-center();
+
+    &:empty {
+      display: none;
+    }
+  }
+}

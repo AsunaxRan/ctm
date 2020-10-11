@@ -1,0 +1,41 @@
+.styled-list {
+  $styled-list: ".styled-list";
+
+  font-size: 75%;
+  font-weight: 700;
+
+  &--info {
+    color: $info;
+
+    #{$styled-list}__item:before {
+      background-color: $info;
+    }
+  }
+
+  &--primary {
+    color: $primary;
+
+    #{$styled-list}__item:before {
+      background-color: $primary;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      border-radius: 50%;
+
+      @include square(8px);
+    }
+  }
+}

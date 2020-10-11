@@ -1,0 +1,26 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: $primary-font;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}

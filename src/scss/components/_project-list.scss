@@ -1,0 +1,45 @@
+.project-list {
+  $project-list: ".project-list";
+  $text-color: #75759b;
+
+  &__item {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      border-radius: 50%;
+      border: 4px solid;
+
+      @include square(20px);
+    }
+
+    &--info:before {
+      border-color: $info;
+    }
+
+    &--primary:before {
+      border-color: $primary;
+    }
+
+    &--warning:before {
+      border-color: $warning;
+    }
+
+    &--danger:before {
+      border-color: $danger;
+    }
+  }
+
+  &__content {
+    font-weight: bold;
+    color: $text-color;
+  }
+}

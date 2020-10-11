@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styleguide</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/index.min.css">
+</head>
+<body>
+  <div class="root">
+    <div class="wrapper">
+      <h1>Styleguide</h1>
+    
+      <h2>Avatar</h2>
+      <img class="avatar avatar" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />
+      <img class="avatar avatar--small" src="imgs/avatar/richard.jpg" alt="avatar" />
+    
+      <h2>Progress</h2>
+      <div class="progress">
+        <div class="progress__bar" style="width: 45%"></div>
+      </div>
+    
+      <h2>Radio</h2>
+      <div class="radio">
+        <div class="radio__item">
+          <input class="radio__input" type="radio" name="radio-tab" id="tab-week" />
+          <label for="tab-week" class="radio__label">Week</label>
+        </div>
+        <div class="radio__item">
+          <input class="radio__input" type="radio" name="radio-tab" id="tab-month" checked />
+          <label for="tab-month" class="radio__label">Month</label>
+        </div>
+      </div>
+    
+      <h2>Button</h2>
+      <button class="btn btn--outline btn--secondary">Weekends</button>
+      <button class="btn btn--primary">Add tasks</button>
+      <button class="btn btn--secondary btn--small">
+        <i class="fas fa-plus"></i>
+        Category
+      </button>
+    
+      <h2>Notification</h2>
+      <a href="#" class="notification">
+        <span class="notification__shape">
+          <i class="fas fa-cog"></i>
+        </span>
+        <span class="notification__badge"></span>
+      </a>
+      <a href="#" class="notification">
+        <span class="notification__shape">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="notification__badge">2</span>
+      </a>
+      <a href="#" class="notification">
+        <span class="notification__shape">
+          <i class="fas fa-bell"></i>
+        </span>
+        <span class="notification__badge">16</span>
+      </a>
+    
+      <h2>Project List</h2>
+      <ul class="project-list">
+        <li class="project-list__item project-list__item--info">
+          <span class="project-list__content">Marketing</span>
+        </li>
+        <li class="project-list__item project-list__item--primary">
+          <span class="project-list__content">Design</span>
+        </li>
+        <li class="project-list__item project-list__item--warning">
+          <span class="project-list__content">Development</span>
+        </li>
+        <li class="project-list__item project-list__item--danger">
+          <span class="project-list__content">Finance</span>
+        </li>
+      </ul>
+    
+      <h2>Styled List</h2>
+      <ul class="styled-list styled-list--info">
+        <li class="styled-list__item">
+          <span class="styled-list__content">Sales report from last month</span>
+        </li>
+        <li class="styled-list__item">
+          <span class="styled-list__content">Prepare offers for clients</span>
+        </li>
+      </ul>
+    
+      <ul class="styled-list styled-list--primary">
+        <li class="styled-list__item">
+          <span class="styled-list__content">Create 3 illustrations for blog post about design trend</span>
+        </li>
+      </ul>
+    
+      <h2>Calendar</h2>
+      <div class="calendar">
+        <div class="calendar__weekdays">
+          <div class="calendar__weekday">Monday</div>
+          <div class="calendar__weekday">Tuesday</div>
+          <div class="calendar__weekday">Wednesday</div>
+          <div class="calendar__weekday">Thursday</div>
+          <div class="calendar__weekday">Friday</div>
+          <div class="calendar__weekday">Saturday</div>
+          <div class="calendar__weekday">Sunday</div>
+        </div>
+        <div class="calendar__weeks">
+          <div class="calendar__week">
+            <div class="date date--extra">
+              <div class="date__label">31</div>
+            </div>
+            <div class="date date--info">
+              <div class="date__label">1</div>
+              <ul class="styled-list styled-list--info">
+                <li class="styled-list__item">
+                  <span class="styled-list__content">Sales report from last month</span>
+                </li>
+                <li class="styled-list__item">
+                  <span class="styled-list__content">Prepare offers for clients</span>
+                </li>
+              </ul>
+            </div>
+            <div class="date">
+              <div class="date__label">2</div>
+            </div>
+            <div class="date">
+              <div class="date__label">3</div>
+            </div>
+            <div class="date date--primary">
+              <div class="date__label">4</div>
+            </div>
+            <div class="date">
+              <div class="date__label">5</div>
+            </div>
+            <div class="date">
+              <div class="date__label">6</div>
+            </div>
+          </div>
+          <div class="calendar__week">
+            <div class="date date--warning">
+              <div class="date__label">7</div>
+            </div>
+            <div class="date">
+              <div class="date__label">8</div>
+            </div>
+            <div class="date">
+              <div class="date__label">9</div>
+            </div>
+            <div class="date">
+              <div class="date__label">10</div>
+            </div>
+            <div class="date">
+              <div class="date__label">11</div>
+            </div>
+            <div class="date">
+              <div class="date__label">12</div>
+            </div>
+            <div class="date">
+              <div class="date__label">13</div>
+            </div>
+          </div>
+          <div class="calendar__week">
+            <div class="date">
+              <div class="date__label">14</div>
+            </div>
+            <div class="date date--info">
+              <div class="date__label">15</div>
+              <div>
+                <span class="text-secondary">Marketing</span>
+                Write an article about design
+                <div class="text-secondary">
+                  <i class="far fa-check-square"></i>
+                  <span>7/9</span>
+                </div>
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <div class="date">
+              <div class="date__label">16</div>
+            </div>
+            <div class="date date--danger">
+              <div class="date__label">17</div>
+            </div>
+            <div class="date">
+              <div class="date__label">18</div>
+            </div>
+            <div class="date">
+              <div class="date__label">19</div>
+            </div>
+            <div class="date">
+              <div class="date__label">20</div>
+            </div>
+          </div>
+          <div class="calendar__week">
+            <div class="date">
+              <div class="date__label">21</div>
+            </div>
+            <div class="date">
+              <div class="date__label">22</div>
+            </div>
+            <div class="date">
+              <div class="date__label">23</div>
+            </div>
+            <div class="date">
+              <div class="date__label">24</div>
+            </div>
+            <div class="date">
+              <div class="date__label">25</div>
+            </div>
+            <div class="date">
+              <div class="date__label">26</div>
+            </div>
+            <div class="date">
+              <div class="date__label">27</div>
+            </div>
+          </div>
+          <div class="calendar__week">
+            <div class="date">
+              <div class="date__label">28</div>
+            </div>
+            <div class="date">
+              <div class="date__label">29</div>
+            </div>
+            <div class="date date--info">
+              <div class="date__label">30</div>
+            </div>
+            <div class="date date--extra">
+              <div class="date__label">1</div>
+            </div>
+            <div class="date date--extra">
+              <div class="date__label">2</div>
+            </div>
+            <div class="date date--extra">
+              <div class="date__label">3</div>
+            </div>
+            <div class="date date--extra">
+              <div class="date__label">4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <h2>Search</h2>
+      <div class="search">
+        <label for="search-input" class="search__icon">
+          <i class="fab fa-sistrix"></i>
+        </label>
+        <input type="text" id="search-input" class="search__input" placeholder="Search..." autocomplete="off" />
+      </div>
+    
+      <h2>Modal</h2>
+      <div class="modal">
+        <div class="modal__dialog">
+          <div class="modal__content">
+            <div class="modal__body">
+              <form class="task-form">
+                <div class="task-form__header">
+                  <div class="task-form__category">
+                    <button class="btn btn--secondary btn--small">
+                      <i class="fas fa-plus"></i>
+                      Category
+                    </button>
+                  </div>
+                  <div class="task-form__date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>12.14.2018</span>
+                  </div>
+                </div>
+                <div class="task-form__body">
+                  <input type="text" class="task-form__title" />
+                  <textarea cols="30" rows="10" class="task-form__description" placeholder="Description..."></textarea>
+                  <div class="task-form__action">
+                    <button class="btn btn--primary">Add tasks</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .wrapper -->
+  </div> <!-- .root -->
+</body>
+</html>

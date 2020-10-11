@@ -1,0 +1,37 @@
+.root {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 80px auto;
+}
+
+.content {
+  background-color: $white;
+  display: flex;
+}
+
+.sidebar {
+  flex-basis: 320px;
+
+  & > section {
+    padding: 50px 40px;
+  }
+
+  & > section:not(:last-child) {
+    border-bottom: 1px solid $gray;
+  }
+}
+
+.brand {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  flex: 1;
+}
