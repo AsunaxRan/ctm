@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="css/index.min.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <div class="root">
@@ -15,32 +15,394 @@
       <div class="content">
         <aside class="sidebar">
           <section class="brand">
-            <h1 class="lead text-secondary">TASK MANAGER</h1>
+            <h1 class="lead text-secondary mb-0">TASK MANAGER</h1>
           </section>
           <section class="user">
-            <div>
-              <img class="avatar avatar" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />            
-              <p>Bertram Gilfoyle</p>
-              <p class="text-secondary">gilfoyle-bertram.piedpiper.com</p>
+            <img class="avatar avatar" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />            
+            <p class="lead font-weight-bold mb-2 mt-6">Bertram Gilfoyle</p>
+            <span class="text-secondary">gilfoyle-bertram.piedpiper.com</span>
+
+            <div class="mt-5">
+                <a href="#" class="notification mx-4">
+                  <span class="notification__shape">
+                    <i class="fas fa-cog"></i>
+                  </span>
+                  <span class="notification__badge"></span>
+                </a>
+                <a href="#" class="notification mx-4">
+                  <span class="notification__shape">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="notification__badge">2</span>
+                </a>
+                <a href="#" class="notification mx-4">
+                  <span class="notification__shape">
+                    <i class="fas fa-bell"></i>
+                  </span>
+                  <span class="notification__badge">16</span>
+                </a>
+            </div>
+
+            <div class="mt-5 full-width">
+              <div class="text-right mb-1 text-light">12/34</div>
+              <div class="progress">
+                <div class="progress__bar" style="width: 45%"></div>
+              </div>
+              <div class="task-statistic">
+                <div class="flex-item-column">
+                  <span class="font-weight-bold mb-2">12</span>
+                  <span class="mb-1 text-secondary">Completed</span>
+                  <span class="text-light">tasks</span>
+                </div>
+                <div class="flex-item-column">
+                  <span class="font-weight-bold mb-2">22</span>
+                  <span class="mb-1 text-secondary">Todo</span>
+                  <span class="text-light">tasks</span>
+                </div>
+                <div class="flex-item-column">
+                  <span class="font-weight-bold mb-2">69</span>
+                  <span class="mb-1 text-secondary">All</span>
+                  <span class="text-light">completed</span>
+                </div>
+              </div>
             </div>
           </section>
-          <section class="projects"></section>
+          <section class="projects">
+            <p class="lead font-weight-bold">PROJECTS</p>
+            <ul class="project-list">
+              <li class="project-list__item project-list__item--info">
+                <span class="project-list__content">Marketing</span>
+              </li>
+              <li class="project-list__item project-list__item--primary">
+                <span class="project-list__content">Design</span>
+              </li>
+              <li class="project-list__item project-list__item--warning">
+                <span class="project-list__content">Development</span>
+              </li>
+              <li class="project-list__item project-list__item--danger">
+                <span class="project-list__content">Finance</span>
+              </li>
+            </ul>
+          </section>
           <section class="team">
-  
+            <p class="lead font-weight-bold">TEAM</p>
+            <div class="team-members">
+              <img class="avatar avatar--small mr-1" src="imgs/avatar/richard.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1" src="imgs/avatar/erlich.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1" src="imgs/avatar/jared.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1" src="imgs/avatar/monica.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />
+            </div>
           </section>
         </aside>
         <div class="main">
           <section class="main__header">
             <div class="search">
               <label for="search-input" class="search__icon">
-                <i class="icon-bell-alt"></i>
+                <i class="fab fa-sistrix"></i>
               </label>
               <input type="text" id="search-input" class="search__input" placeholder="Search..." autocomplete="off" />
             </div>
-            <h2>Calendar</h2>
-            <!-- action -->
+            <h2 class="text-center">Calendar</h2>
+            <span class="caret">
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+              </span>
           </section>
-          <section class="main__body"></section>
+          <section class="main__body">
+            <div class="calendar-wrapper">
+              <div class="calendar">
+                <div class="calendar__header">
+                  <div class="calendar__show">
+                    <div class="radio">
+                      <div class="radio__item">
+                        <input class="radio__input" type="radio" name="radio-tab" id="tab-week" />
+                        <label for="tab-week" class="radio__label">Week</label>
+                      </div>
+                      <div class="radio__item">
+                        <input class="radio__input" type="radio" name="radio-tab" id="tab-month" checked />
+                        <label for="tab-month" class="radio__label">Month</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar__month">
+                    <div class="calendar__control">
+                      <i class="fas fa-chevron-left"></i>
+                      <span>October</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <span>2020</span>
+                  </div>
+                  <div class="calendar__actions">
+                    <button class="btn btn--outline btn--secondary mr-3">Weekends</button>
+                    <button class="btn btn--primary">Add tasks</button>
+                  </div>
+                </div>
+                <div class="calendar__weekdays">
+                  <div class="calendar__weekday">Monday</div>
+                  <div class="calendar__weekday">Tuesday</div>
+                  <div class="calendar__weekday">Wednesday</div>
+                  <div class="calendar__weekday">Thursday</div>
+                  <div class="calendar__weekday">Friday</div>
+                  <div class="calendar__weekday">Saturday</div>
+                  <div class="calendar__weekday">Sunday</div>
+                </div>
+                <div class="calendar__weeks">
+                  <div class="calendar__week">
+                    <div class="calendar__day">
+                      <div class="task task--extra">
+                        <div class="task__label">31</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--info">
+                        <div class="task__label">1</div>
+                        <div class="task__content">
+                          <span class="task__category">Marketing</span>
+                          <ul class="styled-list styled-list--info">
+                            <li class="styled-list__item">
+                              <span class="styled-list__content">Sales report from last month</span>
+                            </li>
+                            <li class="styled-list__item">
+                              <span class="styled-list__content">Prepare offers for clients</span>
+                            </li>
+                          </ul>
+                          <div class="task__statistic">
+                            <i class="far fa-check-square"></i>
+                            <span>0/1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">2</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">3</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">4</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">5</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">6</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar__week">
+                    <div class="calendar__day">
+                      <div class="task task--warning">
+                        <div class="task__label">7</div>
+                        <div class="task__content">
+                          <span class="task__category">Development</span>
+                          <ul class="styled-list styled-list--warning">
+                            <li class="styled-list__item">
+                              <span class="styled-list__content">Take part in course about future design trends and new technologies</span>
+                            </li>
+                          </ul>
+                          <div class="task__statistic">
+                            <i class="far fa-check-square"></i>
+                            <span>0/1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">8</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">9</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">10</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">11</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">12</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">13</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar__week">
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">14</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--info active">
+                        <div class="task__label">15</div>
+                        <div class="task__content">
+                          <span class="task__category">Marketing</span>
+                          <ul class="styled-list styled-list--info">
+                            <li class="styled-list__item">
+                              Write an article about design
+                            </li>
+                          </ul>
+                          <div class="task__statistic">
+                            <i class="far fa-check-square"></i>
+                            <span>7/9</span>
+                          </div>
+                          <i class="task__status fas fa-check-circle"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">16</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">17</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">18</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">19</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">20</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar__week">
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">21</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">22</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">23</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">24</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">25</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">26</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--primary">
+                        <div class="task__label">27</div>
+                        <div class="task__content">
+                          <span class="task__category">Design</span>
+                          <ul class="styled-list styled-list--primary">
+                            <li class="styled-list__item">
+                              <span class="styled-list__content">Create 3 illustrations for blog post about design trends</span>
+                            </li>
+                          </ul>
+                          <div class="task__statistic">
+                            <i class="far fa-check-square"></i>
+                            <span>0/1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar__week">
+                    <div class="calendar__day">
+                      <div class="task task--danger">
+                        <div class="task__label">28</div>
+                        <div class="task__content">
+                          <span class="task__category">Finance</span>
+                          <ul class="styled-list styled-list--danger">
+                            <li class="styled-list__item">
+                              <span class="styled-list__content">Prepare financial statement</span>
+                            </li>
+                          </ul>
+                          <div class="task__statistic">
+                            <i class="far fa-check-square"></i>
+                            <span>1/1</span>
+                          </div>
+                          <i class="task__status fas fa-check-circle"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">29</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task">
+                        <div class="task__label">30</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--extra">
+                        <div class="task__label">1</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--extra">
+                        <div class="task__label">2</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--extra">
+                        <div class="task__label">3</div>
+                      </div>
+                    </div>
+                    <div class="calendar__day">
+                      <div class="task task--extra">
+                        <div class="task__label">4</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- .calendar -->
+            </div>
+          </section>
         </div>
       </div>
       </div>

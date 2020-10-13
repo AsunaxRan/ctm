@@ -1,13 +1,11 @@
 .calendar {
   $calendar: ".calendar";
-  $gray: #73789e;
-  $border-color: #333;
 
   &--portable {
     #{$calendar}__weekday:nth-last-child(1),
     #{$calendar}__weekday:nth-last-child(2),
-    .date:nth-last-child(1),
-    .date:nth-last-child(2) {
+    #{$calendar}__day:nth-last-child(1),
+    #{$calendar}__day:nth-last-child(2) {
       display: none;
     }
 
@@ -16,7 +14,7 @@
     }
 
     #{$calendar}__week:last-child {
-      .date:nth-child(5) {
+      #{$calendar}__day:nth-child(5) {
         border-bottom-right-radius: 10px;
       }
     }
@@ -30,7 +28,7 @@
   &__weekday {
     border-width: 1px 1px 1px 0;
     border-style: solid;
-    border-color: $border-color;
+    border-color: $gray;
     flex: 1 0 180px;
     width: 180px;
     text-align: center;
@@ -52,101 +50,63 @@
     display: flex;
 
     &:last-child {
-      .date:first-child {
+      #{$calendar}__day:first-child {
         border-bottom-left-radius: 10px;
+
+        .task {
+          border-bottom-left-radius: 10px;
+          overflow: hidden;
+        }
       }
 
-      .date:last-child {
+      #{$calendar}__day:last-child {
         border-bottom-right-radius: 10px;
-      }
-    }
-  }
-}
 
-.date {
-  $date: ".date";
-  $dark-blue: #171c39;
-  $light-purple: #a76efb;
-  $light-blue:#6c68f1;
-  $light-orange: #fdca7a;
-  $light-red: #fd6e81;
-
-  flex: 1 0 180px;
-  width: 180px;
-  border-width: 0 1px 1px 0;
-  border-style: solid;
-  border-color: $gray;
-  padding: 25px;
-  font-weight: 700;
-  color: $dark-blue;
-  background: $white;
-  cursor: pointer;
-  position: relative;
-  transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-  &:first-child {
-    border-left-width: 1px;
-  }
-
-  &--extra {
-    color: $gray;
-  }
-
-  &--primary:before,
-  &--info:before,
-  &--warning:before,
-  &--danger:before {
-    position: absolute;
-    content: "";
-    width: 4px;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-
-  @each $color, $value in $theme-colors {
-    &--#{$color}:before {
-      background: $value;
-    }
-  }
-
-  &:hover {
-    transform: scaleX(1.1) scaleY(1.2);
-    z-index: 1;
-    border: 0;
-    box-shadow: 0 25px 20px -15px rgba($dark-blue, .5);
-    color: $white;
-
-    &:before {
-      background: transparent;
-    }
-
-    .styled-list {
-      color: $white;
-
-      &__item:before {
-        display: none;
+        .task {
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+        }
       }
     }
   }
 
-  &--primary:hover {
-    background: linear-gradient($blue, $light-blue);
+  &__day {
+    flex: 1 0 180px;
+    width: 180px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: $gray;
+    transition: overflow .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &:first-child {
+      border-left-width: 1px;
+    }
   }
 
-  &--info:hover {
-    background: linear-gradient($purple, $light-purple);
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &--warning:hover {
-    background: linear-gradient($orange, $light-orange);
+  &__month {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    & > span {
+      color: $gray;
+      margin-top: 5px;
+      display: inline-block;
+    }
   }
 
-  &--danger:hover {
-    background: linear-gradient($red, $light-red);
-  }
-
-  &__label {
-    font-size: 24px;
+  &__control {
+    span {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
   }
 }

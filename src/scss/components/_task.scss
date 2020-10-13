@@ -1,0 +1,156 @@
+.task {
+  $task: ".task";
+  $dark-blue: #171c39;
+  $light-purple: #f6eafe;
+  $light-blue: #eeedfd;
+  $light-orange: #fff5e9;
+  $light-red: #f9e2e8;
+  $light: #e2bcff;
+
+  $light-theme: (
+    "primary": $light-blue,
+    "info": $light-purple,
+    "warning": $light-orange,
+    "danger": $light-red
+  );
+
+  $gradient: (
+    "primary": #a9a4ff,
+    "info": #e0b2ff,
+    "warning": #ffce92,
+    "danger": #ff9db6
+  );
+
+  height: 100%;
+  background: $white;
+  cursor: pointer;
+  position: relative;
+  transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    transform: scale(1.1, 1.2);
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 25px 20px -15px rgba($dark-blue, .5);
+
+    &:before {
+      background: transparent;
+    }
+
+    .styled-list {
+      color: $white;
+
+      &__item {
+        padding-left: 0;
+      }
+
+      &__item:before {
+        display: none;
+      }
+    }
+
+    #{$task}__content {
+      margin-top: 10px;
+    }
+
+    #{$task}__category {
+      color: $light;
+      display: block;
+    }
+
+    #{$task}__statistic {
+      color: $light;
+      display: inline-block;
+    }
+
+    #{$task}__status {
+      display: inline-block;
+    }
+  }
+
+  &--extra {
+    color: $gray;
+  }
+
+  &--primary:before,
+  &--info:before,
+  &--warning:before,
+  &--danger:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  @each $color, $value in $theme-colors {
+    &--#{$color}:before {
+      background: $value;
+    }
+  }
+  
+  padding: 25px;
+  font-weight: 700;
+  color: $dark-blue;
+
+  @each $color, $value in $light-theme {
+    &--#{$color} {
+      background: $value;
+    }
+
+    &:hover #{$task}__category,
+    &:hover #{$task}__statistic {
+      color: $value;
+    }
+  }
+
+  &--primary:hover {
+    background: linear-gradient(to top, $blue, #a9a4ff);
+    color: $white;
+  }
+
+  &--info:hover {
+    background: linear-gradient(to top, $purple, #e0b2ff);
+    color: $white;
+  }
+
+  &--warning:hover {
+    background: linear-gradient(to top, $orange, #ffce92);
+    color: $white;
+  }
+  
+  &--danger:hover {
+    background: linear-gradient(to top, $red, #ff9db6);
+    color: $white;
+  }
+
+  &__label {
+    font-size: 24px;
+  }
+
+  &__content {
+    padding-left: 20px;
+    font-size: 80%;
+  }
+
+  &__category {
+    display: none;
+  }
+
+  &__statistic {
+    display: none;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.75rem;
+    display: none;
+  }
+}
