@@ -115,7 +115,7 @@
               </span>
           </section>
           <section class="main__body">
-            <div class="calendar">
+            <div class="calendar" id="calendar">
               <div class="calendar__header">
                 <div class="calendar__show">
                   <div class="radio">
@@ -138,11 +138,13 @@
                   <span>2020</span>
                 </div>
                 <div class="calendar__actions">
-                  <button class="btn btn--outline btn--secondary mr-3">Weekends</button>
+                  <button 
+                    class="btn btn--outline btn--secondary mr-3" 
+                    id="weeken-toggle">Weekends</button>
                   <button class="btn btn--primary">Add tasks</button>
                 </div>
               </div>
-              <div data-simplebar data-simplebar-auto-hide="false">
+              <div id="simplebar">
                 <div class="calendar__body">
                   <div class="calendar__weekdays">
                     <div class="calendar__weekday">Monday</div>
@@ -408,7 +410,63 @@
           </section>
         </div>
       </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <div class="modal__body">
+            <form class="task-form" id="task-form">
+              <div class="task-form__header">
+                <div class="task-form__category">
+                  <div class="dropdown" id="dropdown">
+                    <button class="btn btn--secondary btn--small dropdown__toggle">
+                      <i class="fas fa-plus mr-1"></i>
+                      Category
+                    </button>
+                    <div class="dropdown__menu">
+                      <a href="#" class="dropdown__item" data-value="Marketing">Marketing</a>
+                      <a href="#" class="dropdown__item" data-value="Design">Design</a>
+                      <a href="#" class="dropdown__item" data-value="Development">Development</a>
+                      <a href="#" class="dropdown__item" data-value="Finance">Finance</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-form__task text-secondary">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>12.14.2018</span>
+                </div>
+              </div>
+              <div class="task-form__body mt-5">
+                <input 
+                  type="text" 
+                  name="task-title"
+                  class="task-form__title" 
+                  placeholder="Title of the task"
+                  required 
+                />
+                <textarea 
+                  rows="4" 
+                  name="task-content"
+                  class="task-form__description mt-5" 
+                  placeholder="Description..."
+                  required></textarea>
+                <span class="task-form__check">
+                  <i class="far fa-check-circle"></i>
+                </span>
+                <div class="task-form__action mt-3">
+                  <button class="btn btn--primary">Add tasks</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="task-list">
+              <div class="task-list__item"></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div> <!-- .modal -->
   </div>
 
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>

@@ -1,11 +1,13 @@
 .modal {
+  $modal: ".modal";
+
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   z-index: $zindex-modal;
-  display: none;
   overflow: hidden;
   outline: 0;
+  transition: .2s right cubic-bezier(0.215, 0.610, 0.355, 1);
 
   @include square(100%);
 
@@ -14,10 +16,10 @@
   }
 
   &__dialog {
-    width: auto;
-    max-width: 500px;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
-    margin: 1.75rem auto;
+    position: relative;
   }
 
   &__content {
@@ -30,11 +32,25 @@
     box-shadow: 0 0 50px 0 rgba($dark, .2);
     position: absolute;
     max-width: 500px;
-    right: 100px;
-    bottom: 100px;
+    right: 30px;
+    bottom: 30px;
   }
 
   &__body {
     padding: 30px 40px;
+  }
+
+  &.show {
+    right: 0%;
+  }
+}
+
+@keyframes slide {
+  0% {
+    right: -500px;
+  }
+
+  100% {
+    right: 30px;
   }
 }

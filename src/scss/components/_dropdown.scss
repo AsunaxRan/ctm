@@ -1,0 +1,32 @@
+.dropdown {
+  $dropdown: ".dropdown";
+
+  position: relative;
+
+  &__menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: $white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba($dark, .3);
+    z-index: $zindex-dropdown;
+    min-width: 140px;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    font-weight: 700;
+    color: $light;
+  }
+
+  &.show {
+    #{$dropdown}__menu {
+      display: block;
+    }
+  }
+}
