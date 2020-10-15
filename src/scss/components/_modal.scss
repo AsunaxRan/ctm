@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
-  top: 50px;
-  right: 50px;
+  top: 0;
+  right: 0;
   z-index: $zindex-modal;
   display: none;
   overflow: hidden;
@@ -14,7 +14,6 @@
   }
 
   &__dialog {
-    position: relative;
     width: auto;
     max-width: 500px;
     pointer-events: none;
@@ -22,16 +21,20 @@
   }
 
   &__content {
-    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
     background-color: $white;
-    border-radius: 4px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba($dark, .2);
+    position: absolute;
+    max-width: 500px;
+    right: 100px;
+    bottom: 100px;
   }
 
   &__body {
-    padding: 10px 20px;
+    padding: 30px 40px;
   }
 }

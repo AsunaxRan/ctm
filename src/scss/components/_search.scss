@@ -1,5 +1,5 @@
 .search {
-  color: $gray;
+  color: $light;
 
   display: inline-block;
   padding: 4px 6px;
@@ -16,6 +16,7 @@
 
     &::placeholder {
       font-weight: 700;
+      color: $light;
     }
   }
 }

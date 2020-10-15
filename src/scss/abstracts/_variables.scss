@@ -12,6 +12,7 @@ $warning: $orange;
 $danger: $red;
 $light: #9d9fb6;
 $dark: #152040;
+$smoke: #f0f0f8;
 
 $theme-colors: ();
 $theme-colors: map-merge(
@@ -29,4 +30,4 @@ $theme-colors: map-merge(
 
 $zindex-modal: 1050;
 
-$primary-font: 'Roboto Condensed', sans-serif;
+$primary-font: 'Noto Sans', sans-serif;

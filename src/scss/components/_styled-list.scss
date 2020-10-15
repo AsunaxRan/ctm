@@ -1,22 +1,15 @@
 .styled-list {
   $styled-list: ".styled-list";
 
-  font-size: 75%;
   font-weight: 700;
 
-  &--info {
-    color: $info;
+  @each $color, $value in $theme-colors {
+    &--#{$color} {
+      color: $value;
 
-    #{$styled-list}__item:before {
-      background-color: $info;
-    }
-  }
-
-  &--primary {
-    color: $primary;
-
-    #{$styled-list}__item:before {
-      background-color: $primary;
+      #{$styled-list}__item:before {
+        background-color: $value;
+      }
     }
   }
 
@@ -30,7 +23,7 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 1rem;
       transform: translateY(-50%);
       display: inline-block;
       border-radius: 50%;

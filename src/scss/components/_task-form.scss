@@ -1,1 +1,51 @@
-.task-form {}
+.task-form {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__body {
+    padding-left: 60px;
+    position: relative;
+  }
+
+  &__title,
+  &__description {
+    width: 100%;
+    border: none;
+    outline: 0;
+  }
+
+   &__title {
+     padding: 15px 0;
+   }
+
+  &__title::placeholder {
+    font-size: 1.5rem;
+    color: $dark;
+    font-weight: 700;
+  }
+
+  &__description {
+    resize: vertical;
+  }
+
+  &__description::placeholder {
+    font-weight: 700;
+  }
+
+  &__action {
+    text-align: right;
+  }
+
+  &__check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    font-size: 36px;
+    color: $light;
+  }
+}
