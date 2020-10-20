@@ -385,17 +385,25 @@
       </div> <!-- .search -->
     
       <h2>Modal</h2>
-      <div class="modal">
+      <div class="modal" id="modal">
         <div class="modal__dialog">
           <div class="modal__content">
             <div class="modal__body">
-              <form class="task-form">
+              <form class="task-form" id="task-form">
                 <div class="task-form__header">
                   <div class="task-form__category">
-                    <button class="btn btn--secondary btn--small">
-                      <i class="fas fa-plus mr-1"></i>
-                      Category
-                    </button>
+                    <div class="dropdown" id="dropdown">
+                      <button class="btn btn--secondary btn--small dropdown__toggle">
+                        <i class="fas fa-plus mr-1"></i>
+                        Category
+                      </button>
+                      <div class="dropdown__menu">
+                        <a href="#" class="dropdown__item" data-value="Marketing">Marketing</a>
+                        <a href="#" class="dropdown__item" data-value="Design">Design</a>
+                        <a href="#" class="dropdown__item" data-value="Development">Development</a>
+                        <a href="#" class="dropdown__item" data-value="Finance">Finance</a>
+                      </div>
+                    </div>
                   </div>
                   <div class="task-form__task text-secondary">
                     <i class="far fa-calendar-alt"></i>
@@ -403,8 +411,19 @@
                   </div>
                 </div>
                 <div class="task-form__body mt-5">
-                  <input type="text" class="task-form__title" placeholder="Title of the task" />
-                  <textarea rows="4" class="task-form__description mt-5" placeholder="Description..."></textarea>
+                  <input 
+                    type="text" 
+                    name="task-title"
+                    class="task-form__title" 
+                    placeholder="Title of the task"
+                    required 
+                  />
+                  <textarea 
+                    rows="4" 
+                    name="task-content"
+                    class="task-form__description mt-5" 
+                    placeholder="Description..."
+                    required></textarea>
                   <span class="task-form__check">
                     <i class="far fa-check-circle"></i>
                   </span>
@@ -413,6 +432,10 @@
                   </div>
                 </div>
               </form>
+
+              <div class="task-list">
+                <div class="task-list__item"></div>
+              </div>
             </div>
           </div>
         </div>

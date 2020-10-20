@@ -1,5 +1,6 @@
 .calendar {
   $calendar: ".calendar";
+  $task: ".task";
 
   &--portable {
     #{$calendar}__weekday:nth-last-child(1),
@@ -14,9 +15,15 @@
     }
 
     #{$calendar}__week:last-child {
-      #{$calendar}__day:nth-child(5) {
+      #{$calendar}__day:nth-child(5),
+      #{$task} {
         border-bottom-right-radius: 10px;
       }
+    }
+
+    #{$calendar}__weekday,
+    #{$calendar}__day {
+      width: 20%;
     }
   }
 
@@ -29,12 +36,12 @@
     border-width: 1px 1px 1px 0;
     border-style: solid;
     border-color: $gray;
-    flex: 1 0 180px;
-    width: 180px;
+    width: calc(100% / 7);
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
     color: $gray;
+    background-color: $white;
 
     &:first-child {
       border-top-left-radius: 10px;
@@ -71,8 +78,7 @@
   }
 
   &__day {
-    flex: 1 0 180px;
-    width: 180px;
+    width: calc(100% / 7);
     height: 130px;
     border-width: 0 1px 1px 0;
     border-style: solid;
@@ -81,6 +87,12 @@
 
     &:first-child {
       border-left-width: 1px;
+    }
+
+    &--outside {
+      .task__label {
+        color: $gray;
+      }
     }
   }
 
@@ -102,8 +114,8 @@
     display: block;
     text-align: center;
     font-weight: 700;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 
     & > span {
       color: $gray;

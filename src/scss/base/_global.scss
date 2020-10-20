@@ -1,9 +1,10 @@
 *, *:before, *:after {
   box-sizing: border-box;
+  word-break: break-word;
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: $primary-font;
   background-color: lightblue;
 }

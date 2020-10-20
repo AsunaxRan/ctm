@@ -12,9 +12,9 @@
     background-color: $light-blue;
     color: $blue;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 1.25rem;
 
-    @include square(50px);
+    @include square(45px);
     @include flex-item-center();
   }
 
@@ -23,12 +23,12 @@
     background-color: $red;
     border-radius: 50%;
     position: absolute;
-    top: -5px;
+    top: -6px;
     right: -5px;
-    font-size: small;
+    font-size: 80%;
     box-shadow: -1px 1px 3px rgba($black-333, .5);
 
-    @include square(22px);
+    @include square(20px);
     @include flex-item-center();
 
     &:empty {

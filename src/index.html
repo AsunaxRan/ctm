@@ -7,11 +7,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
-  />
   <link rel="stylesheet" href="css/index.css">
+
+  <script type="module" src="js/index.js" defer></script>
 </head>
 <body>
   <div class="root">
@@ -19,31 +17,31 @@
       <div class="content">
         <aside class="sidebar">
           <section class="brand">
-            <h1 class="lead text-secondary mb-0">TASK MANAGER</h1>
+            <h1 class="lead text-secondary mb-0 px-5 text-truncate text-center">TASK MANAGER</h1>
           </section>
-          <section class="user">
+          <section class="user text-center">
             <img class="avatar avatar" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />            
-            <p class="lead font-weight-bold mb-2 mt-6">Bertram Gilfoyle</p>
-            <span class="text-secondary">gilfoyle-bertram.piedpiper.com</span>
+            <p class="lead font-weight-bold mb-1 mt-3">Bertram Gilfoyle</p>
+            <span class="text-secondary text-truncate">gilfoyle-bertram.piedpiper.com</span>
 
             <div class="mt-5">
-                <a href="#" class="notification mx-4">
+                <a href="#" class="notification mx-3">
                   <span class="notification__shape">
                     <i class="fas fa-cog"></i>
                   </span>
                   <span class="notification__badge"></span>
                 </a>
-                <a href="#" class="notification mx-4">
+                <a href="#" class="notification mx-3">
                   <span class="notification__shape">
                     <i class="fas fa-envelope"></i>
                   </span>
                   <span class="notification__badge">2</span>
                 </a>
-                <a href="#" class="notification mx-4">
+                <a href="#" class="notification mx-3">
                   <span class="notification__shape">
                     <i class="fas fa-bell"></i>
                   </span>
-                  <span class="notification__badge">16</span>
+                  <span class="notification__badge">9+</span>
                 </a>
             </div>
 
@@ -54,17 +52,17 @@
               </div>
               <div class="task-statistic">
                 <div class="flex-item-column">
-                  <span class="font-weight-bold mb-2">12</span>
+                  <span class="font-weight-bold mb-2" id="completed-tasks"></span>
                   <span class="mb-1 text-secondary">Completed</span>
                   <span class="text-light">tasks</span>
                 </div>
                 <div class="flex-item-column">
-                  <span class="font-weight-bold mb-2">22</span>
+                  <span class="font-weight-bold mb-2" id="todo-tasks"></span>
                   <span class="mb-1 text-secondary">Todo</span>
                   <span class="text-light">tasks</span>
                 </div>
                 <div class="flex-item-column">
-                  <span class="font-weight-bold mb-2">69</span>
+                  <span class="font-weight-bold mb-2" id="all-completed-tasks">69</span>
                   <span class="mb-1 text-secondary">All</span>
                   <span class="text-light">completed</span>
                 </div>
@@ -91,11 +89,11 @@
           <section class="team">
             <p class="lead font-weight-bold">TEAM</p>
             <div class="team-members">
-              <img class="avatar avatar--small mr-1" src="imgs/avatar/richard.jpg" alt="avatar" />
-              <img class="avatar avatar--small mr-1" src="imgs/avatar/erlich.jpg" alt="avatar" />
-              <img class="avatar avatar--small mr-1" src="imgs/avatar/jared.jpg" alt="avatar" />
-              <img class="avatar avatar--small mr-1" src="imgs/avatar/monica.jpg" alt="avatar" />
-              <img class="avatar avatar--small mr-1" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1 mb-1" src="imgs/avatar/richard.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1 mb-1" src="imgs/avatar/erlich.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1 mb-1" src="imgs/avatar/jared.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1 mb-1" src="imgs/avatar/monica.jpg" alt="avatar" />
+              <img class="avatar avatar--small mr-1 mb-1" src="imgs/avatar/gilfoyle.jpg" alt="avatar" />
             </div>
           </section>
         </aside>
@@ -115,7 +113,7 @@
               </span>
           </section>
           <section class="main__body">
-            <div class="calendar" id="calendar">
+            <div class="calendar calendar--portable" id="calendar">
               <div class="calendar__header">
                 <div class="calendar__show">
                   <div class="radio">
@@ -131,20 +129,19 @@
                 </div>
                 <div class="calendar__month">
                   <div class="calendar__control">
-                    <i class="fas fa-chevron-left"></i>
+                    <a href="#"><i class="fas fa-chevron-left"></i></a>
                     <span>October</span>
-                    <i class="fas fa-chevron-right"></i>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
                   </div>
                   <span>2020</span>
                 </div>
-                <div class="calendar__actions">
+                <div class="calendar__actions text-right">
                   <button 
                     class="btn btn--outline btn--secondary mr-3" 
                     id="weeken-toggle">Weekends</button>
-                  <button class="btn btn--primary">Add tasks</button>
+                  <button class="btn btn--primary" id="add-task">Add task</button>
                 </div>
               </div>
-              <div id="simplebar">
                 <div class="calendar__body">
                   <div class="calendar__weekdays">
                     <div class="calendar__weekday">Monday</div>
@@ -157,8 +154,8 @@
                   </div>
                   <div class="calendar__weeks">
                     <div class="calendar__week">
-                      <div class="calendar__day">
-                        <div class="task task--extra">
+                      <div class="calendar__day calendar__day--outside">
+                        <div class="task">
                           <div class="task__label">31</div>
                         </div>
                       </div>
@@ -169,7 +166,8 @@
                             <span class="task__category">Marketing</span>
                             <ul class="styled-list styled-list--info">
                               <li class="styled-list__item">
-                                <span class="styled-list__content">Sales report from last month</span>
+                                <!-- <span class="styled-list__content">Sales report from last month</span> -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus a, minima, quae, libero quaerat nesciunt beatae commodi enim est illum ratione amet? Quibusdam in incidunt perferendis quos numquam qui obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium amet minus omnis dignissimos facere dolorum quae temporibus natus ab voluptatem asperiores eaque et, ipsam commodi doloremque vero! Vero, quasi exercitationem?
                               </li>
                             </ul>
                             <div class="task__statistic">
@@ -382,30 +380,29 @@
                           <div class="task__label">30</div>
                         </div>
                       </div>
-                      <div class="calendar__day">
-                        <div class="task task--extra">
+                      <div class="calendar__day calendar__day--outside">
+                        <div class="task">
                           <div class="task__label">1</div>
                         </div>
                       </div>
-                      <div class="calendar__day">
-                        <div class="task task--extra">
+                      <div class="calendar__day calendar__day--outside">
+                        <div class="task">
                           <div class="task__label">2</div>
                         </div>
                       </div>
-                      <div class="calendar__day">
-                        <div class="task task--extra">
+                      <div class="calendar__day calendar__day--outside">
+                        <div class="task">
                           <div class="task__label">3</div>
                         </div>
                       </div>
-                      <div class="calendar__day">
-                        <div class="task task--extra">
+                      <div class="calendar__day calendar__day--outside">
+                        <div class="task">
                           <div class="task__label">4</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div> <!-- .calendar -->
           </section>
         </div>
@@ -424,17 +421,14 @@
                       <i class="fas fa-plus mr-1"></i>
                       Category
                     </button>
-                    <div class="dropdown__menu">
-                      <a href="#" class="dropdown__item" data-value="Marketing">Marketing</a>
-                      <a href="#" class="dropdown__item" data-value="Design">Design</a>
-                      <a href="#" class="dropdown__item" data-value="Development">Development</a>
-                      <a href="#" class="dropdown__item" data-value="Finance">Finance</a>
-                    </div>
+                    <input type="hidden" name="task-category" />
+                    <div class="dropdown__menu"></div>
                   </div>
                 </div>
                 <div class="task-form__task text-secondary">
                   <i class="far fa-calendar-alt"></i>
-                  <span>12.14.2018</span>
+                  <span id="task-date">12.14.2018</span>
+                  <input type="date" name="task-date" class="d-none" />
                 </div>
               </div>
               <div class="task-form__body mt-5">
@@ -455,7 +449,7 @@
                   <i class="far fa-check-circle"></i>
                 </span>
                 <div class="task-form__action mt-3">
-                  <button class="btn btn--primary">Add tasks</button>
+                  <button class="btn btn--primary">Add task</button>
                 </div>
               </div>
             </form>
@@ -467,9 +461,9 @@
         </div>
       </div>
     </div> <!-- .modal -->
-  </div>
 
-  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-  <script src="js/index.js"></script>
+
+    <!-- just test -->
+  </div>
 </body>
 </html>
