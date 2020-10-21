@@ -56,11 +56,11 @@ console.log(days.filter(day => day.id === "09312020")[0]);
 });
 
 //
+
 [...task].forEach(element => {
   element.addEventListener("click", () => {
+    element.classList.add("active");
     modal.classList.add("show");
-
-    console.log((element.closest(".calendar__day")));
   });
 
   
@@ -72,6 +72,7 @@ modal.addEventListener("click", (e) => {
   
   if (!modalContent[0].contains(e.target)) {
     modal.classList.remove("show");
+    document.querySelector(".task.active").classList.toggle("active");
   }
 });
 
@@ -86,7 +87,23 @@ taskForm.addEventListener("submit", (e) => {
 dropdownBtn.addEventListener("click", (e) => {
   e.preventDefault();
   dropdown.classList.toggle("show");
-  console.log(dropdownBtn);
+});
+
+console.log(dropdownItem);
+
+for (const element of dropdownItem) {
+  console.log(element);
+}
+
+[...dropdownItem].forEach(element => {
+  console.log(element);
+  element.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(e);
+    e.stopPropagation();
+    console.log(e.target);
+  });
 });
 
 

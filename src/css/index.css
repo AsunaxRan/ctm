@@ -1138,6 +1138,7 @@ template {
 
 .task__label {
   font-size: 22px;
+  font-weight: 700;
 }
 
 .task__content {
@@ -1160,8 +1161,96 @@ template {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  font-size: 1.5rem;
+  font-size: 22px;
   display: none;
+}
+
+.task.active {
+  height: auto;
+  -webkit-transform: scale(1.1, 1.2);
+          transform: scale(1.1, 1.2);
+  z-index: 1;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 25px 20px -15px rgba(23, 28, 57, 0.5);
+          box-shadow: 0 25px 20px -15px rgba(23, 28, 57, 0.5);
+}
+
+.task.active:before {
+  background: transparent;
+}
+
+.task.active .styled-list {
+  color: #fff;
+}
+
+.task.active .styled-list__item {
+  padding-left: 0;
+}
+
+.task.active .styled-list__item:before {
+  display: none;
+}
+
+.task.active .task__content {
+  margin-top: 10px;
+}
+
+.task.active .task__category {
+  color: #e2bcff;
+  display: block;
+}
+
+.task.active .task__statistic {
+  color: #e2bcff;
+  display: inline-block;
+}
+
+.task.active .task__status {
+  display: inline-block;
+}
+
+.task.active .task__category,
+.task.active .task__statistic {
+  color: #eeedfd;
+}
+
+.task.active .task__category,
+.task.active .task__statistic {
+  color: #f6eafe;
+}
+
+.task.active .task__category,
+.task.active .task__statistic {
+  color: #fff5e9;
+}
+
+.task.active .task__category,
+.task.active .task__statistic {
+  color: #f9e2e8;
+}
+
+.task.active.task--primary {
+  background: -webkit-gradient(linear, left bottom, left top, from(#5b56e8), to(#a9a4ff));
+  background: linear-gradient(to top, #5b56e8, #a9a4ff);
+  color: #fff;
+}
+
+.task.active.task--info {
+  background: -webkit-gradient(linear, left bottom, left top, from(#bf68f7), to(#e0b2ff));
+  background: linear-gradient(to top, #bf68f7, #e0b2ff);
+  color: #fff;
+}
+
+.task.active.task--warning {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fac168), to(#ffce92));
+  background: linear-gradient(to top, #fac168, #ffce92);
+  color: #fff;
+}
+
+.task.active.task--danger {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff6176), to(#ff9db6));
+  background: linear-gradient(to top, #ff6176, #ff9db6);
+  color: #fff;
 }
 
 .dropdown {
@@ -1451,6 +1540,8 @@ template {
   background-color: #f0f0f8;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .main__header {

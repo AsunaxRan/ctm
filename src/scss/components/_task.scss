@@ -126,6 +126,7 @@
 
   &__label {
     font-size: 22px;
+    font-weight: 700;
   }
 
   &__content {
@@ -148,7 +149,76 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    font-size: 1.5rem;
+    font-size: 22px;
     display: none;
+  }
+  
+  &.active {
+    height: auto;
+    transform: scale(1.1, 1.2);
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 25px 20px -15px rgba($dark-blue, .5);
+
+    &:before {
+      background: transparent;
+    }
+
+    .styled-list {
+      color: $white;
+
+      &__item {
+        padding-left: 0;
+      }
+
+      &__item:before {
+        display: none;
+      }
+    }
+
+    #{$task}__content {
+      margin-top: 10px;
+    }
+
+    #{$task}__category {
+      color: $light;
+      display: block;
+    }
+
+    #{$task}__statistic {
+      color: $light;
+      display: inline-block;
+    }
+
+    #{$task}__status {
+      display: inline-block;
+    }
+
+    @each $color, $value in $light-theme {
+      #{$task}__category,
+      #{$task}__statistic {
+        color: $value;
+      }
+    }
+
+    &#{$task}--primary {
+      background: linear-gradient(to top, $blue, #a9a4ff);
+      color: $white;
+    }
+
+    &#{$task}--info {
+      background: linear-gradient(to top, $purple, #e0b2ff);
+      color: $white;
+    }
+
+    &#{$task}--warning {
+      background: linear-gradient(to top, $orange, #ffce92);
+      color: $white;
+    }
+    
+    &#{$task}--danger {
+      background: linear-gradient(to top, $red, #ff9db6);
+      color: $white;
+    }
   }
 }
